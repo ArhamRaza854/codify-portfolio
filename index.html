@@ -1635,3 +1635,1641 @@
 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arham Raza — Freelance Web Developer at Codify.dev. I build modern, responsive websites for businesses, real estate, and brands.">
+  <meta name="theme-color" content="#080b12">
+
+  <title>Codify.dev</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================
+       CODIFY.DEV — SINGLE FILE PORTFOLIO
+       HTML + CSS + JAVASCRIPT
+    ========================================= */
+
+    :root {
+      --bg: #080b12;
+      --bg-secondary: #0d111b;
+      --card: #101622;
+      --border: rgba(255,255,255,0.09);
+      --text: #f4f7fc;
+      --muted: #929caf;
+      --blue: #5795ff;
+      --blue-light: #80b2ff;
+      --blue-dark: #2364d8;
+      --white: #ffffff;
+      --radius: 18px;
+      --container: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::selection {
+      background: var(--blue);
+      color: white;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--blue-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: var(--blue);
+    }
+
+    .section-title {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.8px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 15px;
+    }
+
+    .blue {
+      color: var(--blue-light);
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      background: rgba(8,11,18,0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s;
+    }
+
+    .navbar.scrolled {
+      border-color: var(--border);
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -1.2px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #aab3c3;
+      font-size: 13px;
+      transition: color .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      border: 1px solid rgba(87,149,255,.5);
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: var(--blue-light) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue);
+      color: white !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 0;
+      font-size: 25px;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 23px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform .25s, background .25s, border-color .25s;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 8px 30px rgba(87,149,255,.18);
+    }
+
+    .btn-primary:hover {
+      background: #70a7ff;
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      color: var(--text);
+      background: rgba(255,255,255,.02);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 145px 0 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      background: rgba(35,100,216,.12);
+      filter: blur(120px);
+      border-radius: 50%;
+      top: 5%;
+      right: -10%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      background: rgba(255,255,255,.025);
+      color: #b7c0ce;
+      font-size: 12px;
+      margin-bottom: 28px;
+    }
+
+    .availability-dot {
+      width: 7px;
+      height: 7px;
+      background: #4ade80;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #4ade80;
+    }
+
+    .hero h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(43px, 7vw, 78px);
+      line-height: 1.12;
+      letter-spacing: -4px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 .accent {
+      color: var(--blue-light);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 590px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 50px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      display: block;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .hero-meta div {
+      border-left: 1px solid var(--border);
+      padding-left: 15px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #6f7b8f;
+      font-size: 11px;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .scroll-indicator::after {
+      content: "";
+      height: 30px;
+      width: 1px;
+      background: var(--blue);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      align-items: start;
+      margin-top: 50px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .about-card h3 {
+      font-size: 17px;
+      margin-bottom: 22px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .detail-row:last-child {
+      border-bottom: 0;
+    }
+
+    .detail-row span:first-child {
+      color: var(--muted);
+    }
+
+    .detail-row span:last-child {
+      text-align: right;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: var(--radius);
+      transition: transform .3s, border-color .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(87,149,255,.45);
+    }
+
+    .service-number {
+      color: var(--blue-light);
+      font-size: 12px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* SKILLS */
+
+    .skills-wrapper {
+      margin-top: 45px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 13px 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-size: 13px;
+      color: #c8d1df;
+      transition: border-color .25s, color .25s;
+    }
+
+    .skill:hover {
+      border-color: var(--blue);
+      color: var(--blue-light);
+    }
+
+    .skills-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 48px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      transition: transform .3s, border-color .3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(87,149,255,.4);
+    }
+
+    .project-preview {
+      min-height: 235px;
+      padding: 25px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(87,149,255,.18), transparent 40%),
+        linear-gradient(135deg, #111b2d, #0b101a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-window {
+      width: 90%;
+      background: #0b1018;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.3);
+      transform: rotate(-2deg);
+      transition: transform .4s;
+    }
+
+    .project-card:hover .preview-window {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 16px;
+    }
+
+    .window-dots i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #5c6574;
+    }
+
+    .preview-line {
+      height: 7px;
+      background: #263449;
+      border-radius: 5px;
+      margin: 8px 0;
+      width: 70%;
+    }
+
+    .preview-line.short {
+      width: 40%;
+    }
+
+    .preview-line.blue-line {
+      background: var(--blue-dark);
+      width: 50%;
+    }
+
+    .project-info {
+      padding: 25px;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .project-top h3 {
+      font-size: 19px;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .project-status {
+      color: #fbbf24;
+      font-size: 10px;
+      border: 1px solid rgba(251,191,36,.25);
+      background: rgba(251,191,36,.06);
+      padding: 5px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-tags span {
+      font-size: 10px;
+      padding: 5px 9px;
+      background: rgba(255,255,255,.04);
+      border-radius: 5px;
+      color: #b5c0d0;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-list {
+      margin-top: 45px;
+      border-left: 1px solid rgba(87,149,255,.35);
+      padding-left: 30px;
+    }
+
+    .experience-item {
+      position: relative;
+      padding-bottom: 35px;
+    }
+
+    .experience-item::before {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--blue);
+      left: -35px;
+      top: 8px;
+      box-shadow: 0 0 15px rgba(87,149,255,.4);
+    }
+
+    .experience-item h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .experience-item .role-meta {
+      color: var(--blue-light);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .experience-item p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 650px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      background:
+        radial-gradient(circle at 90% 0%, rgba(87,149,255,.12), transparent 40%),
+        var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      margin-top: 45px;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 20px 0 28px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .contact-links a {
+      color: #c9d3e1;
+      font-size: 13px;
+      transition: color .2s;
+    }
+
+    .contact-links a:hover {
+      color: var(--blue-light);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      color: #b9c3d2;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: #090d14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 13px 15px;
+      color: white;
+      outline: none;
+      font-size: 13px;
+      width: 100%;
+      transition: border-color .2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--blue-light);
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 900;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      box-shadow: 0 8px 30px rgba(37,211,102,.25);
+      transition: transform .25s;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    .whatsapp-float svg {
+      width: 27px;
+      height: 27px;
+      fill: currentColor;
+    }
+
+    /* REVEAL ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .contact-box {
+        padding: 35px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .section {
+        padding: 80px 0;
+      }
+
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      .nav-inner {
+        height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #0b1018;
+        border-bottom: 1px solid var(--border);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px;
+      }
+
+      .nav-cta {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 130px 0 90px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-meta {
+        gap: 18px;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-preview {
+        min-height: 190px;
+      }
+
+      .contact-box {
+        padding: 25px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .whatsapp-float {
+        width: 48px;
+        height: 48px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+
+      <a href="#home" class="logo">Codify<span>.dev</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact" class="nav-cta">Let's Talk ↗</a></li>
+      </ul>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-glow"></div>
+
+    <div class="container">
+      <div class="hero-content reveal">
+
+        <div class="availability">
+          <span class="availability-dot"></span>
+          Available for freelance projects
+        </div>
+
+        <h1>
+          Your Vision.<br>
+          My Code.<br>
+          <span class="accent">A Website That Stands Out.</span>
+        </h1>
+
+        <p class="hero-description">
+          I'm Arham Raza, a freelance web developer behind Codify.dev.
+          I create modern, responsive websites that help businesses
+          establish their online presence and turn ideas into reality.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            Explore My Work ↗
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Let's Work Together
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong>HTML · CSS · JavaScript</strong>
+            Core technologies
+          </div>
+
+          <div>
+            <strong>Web Development</strong>
+            My primary focus
+          </div>
+
+          <div>
+            <strong>Worldwide</strong>
+            Open to international clients
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="scroll-indicator">SCROLL TO EXPLORE</div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+
+    <div class="container reveal">
+
+      <span class="section-label">About Me</span>
+
+      <h2 class="section-title">
+        Turning ideas into<br>
+        <span class="blue">digital experiences.</span>
+      </h2>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            Hey, I'm Arham Raza, the developer behind Codify.dev.
+            I enjoy building websites that combine clean design,
+            smooth functionality, and a great user experience.
+          </p>
+
+          <p>
+            My focus is creating websites that look professional,
+            work smoothly across devices, and help businesses
+            present themselves confidently online.
+          </p>
+
+          <p>
+            Whether you need a business website, a real estate
+            platform, an online store, or a personal portfolio,
+            I'm ready to help bring your ideas to life.
+          </p>
+
+          <a href="#contact" class="btn btn-outline">
+            Start a Project ↗
+          </a>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3>Quick Introduction</h3>
+
+          <div class="detail-row">
+            <span>Name</span>
+            <span>Arham Raza</span>
+          </div>
+
+          <div class="detail-row">
+            <span>Brand</span>
+            <span>Codify.dev</span>
+          </div>
+
+          <div class="detail-row">
+            <span>Primary Role</span>
+            <span>Web Developer</span>
+          </div>
+
+          <div class="detail-row">
+            <span>Experience</span>
+            <span>Intermediate</span>
+          </div>
+
+          <div class="detail-row">
+            <span>Location</span>
+            <span>Pakistan · Remote</span>
+          </div>
+
+          <div class="detail-row">
+            <span>Availability</span>
+            <span class="blue">Freelance Projects</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+
+    <div class="container reveal">
+
+      <span class="section-label">What I Do</span>
+
+      <h2 class="section-title">
+        Websites built around<br>
+        <span class="blue">your business.</span>
+      </h2>
+
+      <p class="section-description">
+        From simple business websites to more advanced digital
+        experiences, I can help you build an online presence
+        that fits your goals.
+      </p>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <span class="service-number">01 / BUSINESS</span>
+          <h3>Business Websites</h3>
+          <p>
+            Professional websites that introduce your business,
+            showcase your services, and help customers connect
+            with you.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">02 / REAL ESTATE</span>
+          <h3>Real Estate Websites</h3>
+          <p>
+            Property-focused websites for agents, investors,
+            and real estate businesses looking to showcase
+            properties and generate inquiries.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">03 / E-COMMERCE</span>
+          <h3>E-commerce Websites</h3>
+          <p>
+            Online storefronts designed to showcase products
+            and provide customers with a convenient shopping
+            experience.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">04 / PERSONAL BRAND</span>
+          <h3>Portfolio Websites</h3>
+          <p>
+            Personal portfolios that present your work,
+            skills, and professional identity in a clean
+            and memorable way.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+
+    <div class="container reveal">
+
+      <span class="section-label">My Toolkit</span>
+
+      <h2 class="section-title">
+        Technologies I <span class="blue">work with.</span>
+      </h2>
+
+      <p class="section-description">
+        My current development toolkit focuses on the
+        technologies used to build modern websites.
+      </p>
+
+      <div class="skills-wrapper">
+        <span class="skill">HTML5</span>
+        <span class="skill">CSS3</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Responsive Design</span>
+        <span class="skill">Web Development</span>
+        <span class="skill">UI Implementation</span>
+        <span class="skill">Website Optimization</span>
+        <span class="skill">VS Code</span>
+      </div>
+
+      <p class="skills-note">
+        My toolkit will continue to grow as I explore new
+        technologies and improve my development skills.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+
+    <div class="container reveal">
+
+      <span class="section-label">Selected Work</span>
+
+      <h2 class="section-title">
+        Projects I'm <span class="blue">working on.</span>
+      </h2>
+
+      <p class="section-description">
+        A look at my development work and projects.
+        More projects and completed websites will be added
+        as my portfolio grows.
+      </p>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <article class="project-card">
+
+          <div class="project-preview">
+            <div class="preview-window">
+
+              <div class="window-dots">
+                <i></i><i></i><i></i>
+              </div>
+
+              <div class="preview-line blue-line"></div>
+              <div class="preview-line"></div>
+              <div class="preview-line short"></div>
+              <div class="preview-line"></div>
+
+            </div>
+          </div>
+
+          <div class="project-info">
+
+            <div class="project-top">
+              <h3>Arham US Real Estate</h3>
+              <span class="project-status">In Progress</span>
+            </div>
+
+            <p>
+              A real estate website concept designed for
+              property buyers, sellers, and investors.
+              Focused on a professional experience and
+              modern property presentation.
+            </p>
+
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Real Estate</span>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 2 -->
+        <article class="project-card">
+
+          <div class="project-preview">
+            <div class="preview-window">
+
+              <div class="window-dots">
+                <i></i><i></i><i></i>
+              </div>
+
+              <div class="preview-line"></div>
+              <div class="preview-line blue-line"></div>
+              <div class="preview-line short"></div>
+              <div class="preview-line"></div>
+
+            </div>
+          </div>
+
+          <div class="project-info">
+
+            <div class="project-top">
+              <h3>Codify.dev Portfolio</h3>
+              <span class="project-status">In Development</span>
+            </div>
+
+            <p>
+              My personal developer portfolio, created to
+              showcase my web development skills, services,
+              and projects to potential international clients.
+            </p>
+
+            <div class="project-tags">
+              <span>Personal Branding</span>
+              <span>Web Design</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+
+    <div class="container reveal">
+
+      <span class="section-label">Professional Background</span>
+
+      <h2 class="section-title">
+        My professional <span class="blue">experience.</span>
+      </h2>
+
+      <p class="section-description">
+        My professional background includes web development
+        alongside experience in quality assurance,
+        lead generation, and sales.
+      </p>
+
+      <div class="experience-list">
+
+        <div class="experience-item">
+
+          <h3>Freelance Web Developer</h3>
+
+          <div class="role-meta">
+            Primary Professional Focus
+          </div>
+
+          <p>
+            Building websites using HTML, CSS, and JavaScript.
+            Focused on responsive design, professional layouts,
+            and helping businesses establish their online presence.
+          </p>
+
+        </div>
+
+        <div class="experience-item">
+
+          <h3>Quality Assurance</h3>
+
+          <div class="role-meta">
+            Secondary Professional Experience
+          </div>
+
+          <p>
+            Experience with reviewing work, identifying
+            inconsistencies, and maintaining attention
+            to detail and quality.
+          </p>
+
+        </div>
+
+        <div class="experience-item">
+
+          <h3>Lead Generation</h3>
+
+          <div class="role-meta">
+            Secondary Professional Experience
+          </div>
+
+          <p>
+            Experience supporting lead generation activities
+            and understanding the importance of identifying
+            potential customers and business opportunities.
+          </p>
+
+        </div>
+
+        <div class="experience-item">
+
+          <h3>Sales Executive</h3>
+
+          <div class="role-meta">
+            Secondary Professional Experience
+          </div>
+
+          <p>
+            Experience in sales communication, customer
+            interaction, and understanding customer needs.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+
+    <div class="container reveal">
+
+      <span class="section-label">Get In Touch</span>
+
+      <h2 class="section-title">
+        Have a project in <span class="blue">mind?</span>
+      </h2>
+
+      <p class="section-description">
+        Have an idea, need a website, or want to discuss
+        a project? I'd love to hear from you.
+      </p>
+
+      <div class="contact-box">
+
+        <div class="contact-copy">
+
+          <h3 style="font-size:25px;">
+            Let's build something<br>
+            <span class="blue">great together.</span>
+          </h3>
+
+          <p>
+            I'm open to freelance opportunities and
+            collaborations with clients worldwide.
+            Reach out through WhatsApp, LinkedIn,
+            or the contact form.
+          </p>
+
+          <div class="contact-links">
+
+            <a href="mailto:arhamraza232008@gmail.com">
+              ✉ Email: arhamraza232008@gmail.com
+            </a>
+
+            <a href="https://www.linkedin.com/in/arham-raza-12a6b1377/"
+               target="_blank" rel="noopener noreferrer">
+              ↗ Connect on LinkedIn
+            </a>
+
+            <a href="https://wa.me/923212181575"
+               target="_blank" rel="noopener noreferrer">
+              ↗ Start a WhatsApp conversation
+            </a>
+<a href="https://github.com/ArhamRaza854"
+   target="_blank"
+   rel="noopener noreferrer">
+   GitHub
+</a>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+        <form class="contact-form" id="contactForm">
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name"
+              placeholder="John Smith" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email"
+              placeholder="john@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Project Type</label>
+            <input type="text" id="subject" name="subject"
+              placeholder="Business website, e-commerce, etc." required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell Me About Your Project</label>
+            <textarea id="message" name="message"
+              placeholder="What do you have in mind?"
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Send Project Inquiry ↗
+          </button>
+
+          <p class="form-note">
+            This form opens your email application with
+            your message prepared. It does not send
+            automatically.
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-inner">
+
+      <a href="#home" class="logo">Codify<span>.dev</span></a>
+
+      <p>
+        © <span id="year"></span> Codify.dev · Arham Raza.
+        Built with intention.
+      </p>
+
+      <div class="footer-links">
+        <a href="#home">Back to top ↑</a>
+
+        <a href="https://www.linkedin.com/in/arham-raza-12a6b1377/"
+           target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/923212181575"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contact me on WhatsApp">
+
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 .5C7.44.5.5 7.44.5 16c0 2.82.75 5.57 2.18 7.99L.5 31.5l7.7-2.02A15.43 15.43 0 0 0 16 31.5c8.56 0 15.5-6.94 15.5-15.5S24.56.5 16 .5zm0 28.2c-2.35 0-4.66-.63-6.67-1.83l-.48-.28-4.57 1.2 1.22-4.45-.31-.5A12.63 12.63 0 0 1 3.2 16C3.2 8.93 8.93 3.2 16 3.2S28.8 8.93 28.8 16 23.07 28.7 16 28.7zm6.94-9.47c-.38-.19-2.23-1.1-2.58-1.22-.35-.13-.6-.19-.85.19-.38.56-1.45.98-1.77 1.06-.3.08-.65.04-1.03-.15-.38-.19-1.6-.59-3.05-1.88-1.13-1-1.9-2.24-2.12-2.62-.22-.38-.02-.58.17-.77.17-.17.38-.44.56-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.09-.19-.85-2.04-1.16-2.8-.3-.74-.62-.64-.85-.65h-.72c-.25 0-.66.09-1 .47-.34.38-1.3 1.27-1.3 3.1 0 1.83 1.33 3.6 1.52 3.85.19.25 2.62 4 6.35 5.6.89.38 1.59.61 2.13.78.9.29 1.72.25 2.37.15.72-.11 2.23-.91 2.55-1.79.31-.88.31-1.63.22-1.79-.1-.16-.35-.25-.73-.44z"/>
+    </svg>
+
+  </a>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // =========================================
+    // CODIFY.DEV JAVASCRIPT
+    // =========================================
+
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close mobile menu after clicking a navigation link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Navbar background when scrolling
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 30);
+    });
+
+    // Reveal sections when they enter the viewport
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12
+      });
+
+      revealElements.forEach(element => {
+        observer.observe(element);
+      });
+    } else {
+      revealElements.forEach(element => {
+        element.classList.add("visible");
+      });
+    }
+
+    // Automatically update footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Contact form: prepare email draft
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !subject || !message) {
+        alert("Please complete all fields.");
+        return;
+      }
+
+      const emailSubject = encodeURIComponent(
+        "Website Inquiry: " + subject
+      );
+
+      const emailBody = encodeURIComponent(
+        "Hello Arham,\n\n" +
+        "My name is " + name + ".\n" +
+        "My email: " + email + "\n\n" +
+        "Project: " + subject + "\n\n" +
+        "Project details:\n" + message + "\n\n" +
+        "Looking forward to hearing from you."
+      );
+
+      const mailtoLink =
+        "mailto:arhamraza232008@gmail.com" +
+        "?subject=" + emailSubject +
+        "&body=" + emailBody;
+
+      window.location.href = mailtoLink;
+    });
+
+  </script>
+
+</body>
+</html>
