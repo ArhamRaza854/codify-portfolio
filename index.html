@@ -18,6 +18,31 @@
        CODIFY.DEV — SINGLE FILE PORTFOLIO
        HTML + CSS + JAVASCRIPT
     ========================================= */
+    .logo {
+  font-family: 'JetBrains Mono', monospace, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-accent {
+  color: #e57c35; /* Your agency copper accent color */
+}
+
+.logo-cursor {
+  color: #e57c35;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
     :root {
       --bg: #080b12;
@@ -919,8 +944,9 @@
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
 
-      <a href="#home" class="logo">Codify<span>.dev</span></a>
-
+<a href="#home" class="logo">
+  <span class="logo-text">Codify</span><span class="logo-accent">.dev</span><span class="logo-cursor">_</span>
+</a>
       <button class="menu-toggle" id="menuToggle"
         aria-label="Toggle navigation" aria-expanded="false">
         ☰
