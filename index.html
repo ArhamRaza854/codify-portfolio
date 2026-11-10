@@ -555,7 +555,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
       margin-top: 48px;
     }
@@ -886,6 +886,12 @@
 
     /* RESPONSIVE */
 
+    @media (max-width: 950px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 850px) {
       .about-grid,
       .contact-box {
@@ -1019,7 +1025,7 @@
     <div class="container nav-inner">
 
 <a href="#home" class="logo">
-  <span class="logo-text">Codify</span><span class="logo-accent">.dev</span><span class="logo-cursor">_</span>
+  <span class="logo-text">Codify</span><span class="logo-accent">.dev</span><span class="logo-cursor"></span>
 </a>
       <button class="menu-toggle" id="menuToggle"
         aria-label="Toggle navigation" aria-expanded="false">
@@ -1355,20 +1361,22 @@
         <!-- PROJECT 2: OMNEXA AI -->
         <article class="project-card glass-panel">
 
-          <div class="project-preview">
-            <div class="preview-window">
+          <a href="https://omnexaai.vercel.app/" target="_blank" rel="noopener noreferrer" style="display: block;">
+            <div class="project-preview">
+              <div class="preview-window">
 
-              <div class="window-dots">
-                <i></i><i></i><i></i>
+                <div class="window-dots">
+                  <i></i><i></i><i></i>
+                </div>
+
+                <div class="preview-line"></div>
+                <div class="preview-line blue-line"></div>
+                <div class="preview-line short"></div>
+                <div class="preview-line"></div>
+
               </div>
-
-              <div class="preview-line"></div>
-              <div class="preview-line blue-line"></div>
-              <div class="preview-line short"></div>
-              <div class="preview-line"></div>
-
             </div>
-          </div>
+          </a>
 
           <div class="project-info">
 
@@ -1381,14 +1389,60 @@
               An all-in-one commercial AI workspace combining 13 specialized AI suites—including copy generation, code assistants, financial models, and analytics dashboards—into a single platform.
             </p>
 
-            <div class="project-tags">
+            <div class="project-tags" style="margin-bottom: 18px;">
               <span>SaaS Platform</span>
               <span>AI Workspace</span>
               <span>HTML5</span>
               <span>CSS Grid</span>
               <span>JavaScript</span>
             </div>
-<a href="https://omnexaai.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; justify-content: center; padding: 10px 15px; font-size: 13px;">
+            <a href="https://omnexaai.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; justify-content: center; padding: 10px 15px; font-size: 13px;">
+              Visit Live Site ↗
+            </a>
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 3: BYTESTUDIO -->
+        <article class="project-card glass-panel">
+
+          <a href="https://bytestudio-bice.vercel.app/" target="_blank" rel="noopener noreferrer" style="display: block;">
+            <div class="project-preview">
+              <div class="preview-window">
+
+                <div class="window-dots">
+                  <i></i><i></i><i></i>
+                </div>
+
+                <div class="preview-line short"></div>
+                <div class="preview-line"></div>
+                <div class="preview-line blue-line"></div>
+                <div class="preview-line"></div>
+
+              </div>
+            </div>
+          </a>
+
+          <div class="project-info">
+
+            <div class="project-top">
+              <h3>03. ByteStudio</h3>
+              <span class="project-status">Live</span>
+            </div>
+
+            <p>
+              A professional digital agency platform featuring dynamic website style explorers, interactive project builders, and direct WhatsApp client integrations.
+            </p>
+
+            <div class="project-tags" style="margin-bottom: 18px;">
+              <span>Agency Platform</span>
+              <span>Liquid Glass</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <a href="https://bytestudio-bice.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; justify-content: center; padding: 10px 15px; font-size: 13px;">
               Visit Live Site ↗
             </a>
           </div>
